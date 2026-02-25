@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pizzaria d'lima</title>
+    <style>
+      :root {
+        --vermelho: #b7111a;
+        --amarelo: #ffcc29;
+        --creme: #fff5d8;
+        --texto: #2b1d12;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        color: var(--texto);
+        background: linear-gradient(180deg, #fff 0%, var(--creme) 100%);
+      }
+
+      header {
+        background: var(--vermelho);
+        color: white;
+        padding: 1.4rem 1rem;
+        text-align: center;
+        border-bottom: 8px solid var(--amarelo);
+      }
+
+      header h1 {
+        margin: 0;
+        font-size: clamp(1.8rem, 4vw, 2.7rem);
+        letter-spacing: 1px;
+      }
+
+      header p {
+        margin: 0.6rem 0 0;
+        font-weight: bold;
+        color: #ffe998;
+      }
+
+      nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.6rem;
+        padding: 1rem;
+        background: #8e0e15;
+      }
+
+      .tab-button {
+        border: 2px solid var(--amarelo);
+        background: transparent;
+        color: #fff;
+        font-weight: bold;
+        padding: 0.6rem 1rem;
+        border-radius: 999px;
+        cursor: pointer;
+        transition: 0.2s ease;
+      }
+
+      .tab-button:hover,
+      .tab-button.active {
+        background: var(--amarelo);
+        color: #53100e;
+      }
+
+      main {
+        max-width: 980px;
+        margin: 1rem auto 2rem;
+        padding: 0 1rem;
+      }
+
+      .tab-panel {
+        display: none;
+        background: #fff;
+        border: 3px solid var(--vermelho);
+        border-radius: 14px;
+        padding: 1.2rem;
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+      }
+
+      .tab-panel.active {
+        display: block;
+      }
+
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 1rem;
+      }
+
+      .card {
+        background: #fff8e8;
+        border-left: 6px solid var(--amarelo);
+        padding: 0.9rem;
+        border-radius: 10px;
+      }
+
+      blockquote {
+        margin: 0;
+        font-style: italic;
+      }
+
+      footer {
+        text-align: center;
+        font-weight: bold;
+        padding: 1rem;
+        background: var(--vermelho);
+        color: #ffd756;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Pizzaria d'lima</h1>
+      <p>Sabor artesanal, massa leve e muito queijo desde 1998.</p>
+    </header>
+
+    <nav aria-label="Abas da página">
+      <button class="tab-button active" data-tab="quem-somos">Quem somos</button>
+      <button class="tab-button" data-tab="onde-estamos">Onde estamos</button>
+      <button class="tab-button" data-tab="relatos">Relatos</button>
+      <button class="tab-button" data-tab="famosos">Quem já passou por aqui</button>
+    </nav>
+
+    <main>
+      <section id="quem-somos" class="tab-panel active">
+        <h2>Quem somos</h2>
+        <p>
+          A <strong>Pizzaria d'lima</strong> nasceu em um forno a lenha de bairro e se tornou
+          referência em pizzas de borda recheada, sabores brasileiros e atendimento de casa de família.
+        </p>
+        <div class="cards">
+          <article class="card">
+            <h3>Nossa missão</h3>
+            <p>Servir pizzas inesquecíveis com ingredientes frescos e preço justo.</p>
+          </article>
+          <article class="card">
+            <h3>Especialidades</h3>
+            <p>Calabresa crocante, 4 queijos premium, frango com catupiry e a famosa D'Lima Suprema.</p>
+          </article>
+          <article class="card">
+            <h3>Horário</h3>
+            <p>Terça a domingo, das 18h às 00h. Delivery até 01h em dias especiais.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="onde-estamos" class="tab-panel">
+        <h2>Onde estamos</h2>
+        <p><strong>Endereço:</strong> Rua das Oliveiras, 422 - Centro, São Paulo - SP.</p>
+        <p><strong>Referência:</strong> ao lado da Praça do Relógio, esquina com a Av. Dom Pedro.</p>
+        <p><strong>Contato:</strong> (11) 4002-2001 | Instagram: @pizzariadlima</p>
+      </section>
+
+      <section id="relatos" class="tab-panel">
+        <h2>Relatos de clientes satisfeitos</h2>
+        <div class="cards">
+          <article class="card">
+            <blockquote>“A melhor massa que já provei. Crocante por fora e macia por dentro!”</blockquote>
+            <p>— Carla M.</p>
+          </article>
+          <article class="card">
+            <blockquote>“Pedido chegou rápido e quentinho. Virou tradição de sexta aqui em casa.”</blockquote>
+            <p>— André R.</p>
+          </article>
+          <article class="card">
+            <blockquote>“Atendimento impecável e sabores criativos. A de pesto com tomate seco é perfeita.”</blockquote>
+            <p>— Luana F.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="famosos" class="tab-panel">
+        <h2>Famosos e celebridades que já comeram aqui</h2>
+        <p>
+          A d'lima também virou ponto de encontro após shows e eventos na cidade. Já passaram por
+          aqui nomes como:
+        </p>
+        <ul>
+          <li>Neymar Jr.</li>
+          <li>Anitta</li>
+          <li>Rodrigo Faro</li>
+          <li>Paolla Oliveira</li>
+        </ul>
+        <p><em>E todo mundo pede a casa para repetir: pizza meia calabresa, meia marguerita especial.</em></p>
+      </section>
+    </main>
+
+    <footer>🍕 Pizzaria d'lima — Vermelho no molho, amarelo no queijo, excelência em cada fatia.</footer>
+
+    <script>
+      const buttons = document.querySelectorAll('.tab-button');
+      const panels = document.querySelectorAll('.tab-panel');
+
+      buttons.forEach((button) => {
+        button.addEventListener('click', () => {
+          const target = button.dataset.tab;
+
+          buttons.forEach((b) => b.classList.remove('active'));
+          panels.forEach((panel) => panel.classList.remove('active'));
+
+          button.classList.add('active');
+          document.getElementById(target).classList.add('active');
+        });
+      });
+    </script>
+  </body>
+</html>
